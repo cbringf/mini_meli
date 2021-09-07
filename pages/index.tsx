@@ -1,14 +1,11 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
-import MeliTemplate from "../template";
+import Template from "../template";
 
 const Home: NextPage = () => {
   return (
-    <MeliTemplate>
+    <Template>
       <p>Under construction</p>
-    </MeliTemplate>
+    </Template>
   );
 };
 
