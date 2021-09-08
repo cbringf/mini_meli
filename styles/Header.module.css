@@ -1,0 +1,39 @@
+.container {
+  width: 100%;
+  background-color: #ffe600;
+  height: 45px;
+}
+
+.search-box {
+  display: flex;
+  height: 100%;
+  padding: 5px;
+  width: 80%;
+  margin: auto;
+}
+
+.search-box .input {
+  border: none;
+  margin: 2px;
+  flex: 1;
+  margin-right: 0;
+  padding: 9px 60px 10px 9px;
+  font-family: Proxima Nova, -apple-system, Helvetica Neue, Helvetica, Roboto,
+    Arial, sans-serif !important;
+}
+
+.search-box .logo {
+  display: flex;
+  width: 70px;
+}
+
+.search-box .submit {
+  border: none;
+  margin: 2px 0 2px 0;
+  cursor: pointer;
+}
+
+.search-box .submit img {
+  height: 25px;
+  padding-top: 5px;
+}

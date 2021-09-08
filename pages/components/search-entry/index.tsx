@@ -1,14 +1,10 @@
 import Link from "next/link";
+import styles from "../../../styles/SearchEntry.module.css";
 
-const SearchEntry = ({ id, title, picture, price }: any) => {
+const SearchEntry = ({ id, title, picture, price, address }: any) => {
   const url = "/items/";
   return (
-    <div
-      style={{
-        display: "flex",
-        borderBottom: "1px solid #EEEEEE",
-      }}
-    >
+    <div className={styles.entry}>
       <Link href={`${url}${id}`}>
         <a>
           <img
@@ -22,16 +18,8 @@ const SearchEntry = ({ id, title, picture, price }: any) => {
           />
         </a>
       </Link>
-      <div>
-        <p
-          style={{
-            color: "#333333",
-            fontFamily:
-              "Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif",
-          }}
-        >
-          $ {price.toLocaleString()}
-        </p>
+      <div className={styles.info}>
+        <p>$ {price.toLocaleString()}</p>
         <Link href={`${url}${id}`}>
           <a>
             <p
@@ -48,6 +36,7 @@ const SearchEntry = ({ id, title, picture, price }: any) => {
           </a>
         </Link>
       </div>
+      <p>{address}</p>
     </div>
   );
 };
