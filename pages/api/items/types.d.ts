@@ -6,6 +6,7 @@ export type ItemEntry = {
   price: number;
   title: string;
   id: string;
+  address: string;
 };
 
 export type ItemDetails = {

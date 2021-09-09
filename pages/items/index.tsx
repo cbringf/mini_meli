@@ -3,6 +3,7 @@ import { Fragment } from "react";
 import Template from "../../template";
 import { findItems } from "../api/items";
 import { ItemEntry } from "../api/items/types";
+import EmptyEntryList from "../components/empty-entry-list";
 import SearchEntry from "../components/search-entry";
 
 export type SearchPageProps = {
@@ -20,17 +21,24 @@ const buildDescription = (query: string | undefined) =>
 
 const SearchPage: NextPage<SearchPageProps> = ({ items, query }) => {
   return (
-    <Template title={buildTitle(query)} description={buildDescription(query)}>
+    <Template
+      query={query}
+      title={buildTitle(query)}
+      description={buildDescription(query)}
+    >
       <Fragment>
-        {items.map((i) => (
-          <SearchEntry
-            key={i.id}
-            id={i.id}
-            title={i.title}
-            picture={i.picture}
-            price={i.price}
-          />
-        ))}
+        {items &&
+          items.map((i) => (
+            <SearchEntry
+              key={i.id}
+              id={i.id}
+              title={i.title}
+              picture={i.picture}
+              price={i.price}
+              address={i.address}
+            />
+          ))}
+        {!items && <EmptyEntryList query={query} />}
       </Fragment>
     </Template>
   );

@@ -22,6 +22,14 @@
     Arial, sans-serif !important;
 }
 
+.search-box .input:focus {
+  outline: none;
+}
+
+.search-box .logo a {
+  display: flex;
+}
+
 .search-box .logo {
   display: flex;
   width: 70px;

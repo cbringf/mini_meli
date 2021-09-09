@@ -5,8 +5,17 @@ import { FindItemsResult, GetDetailsResult } from "./types";
 export async function findItems(
   context: NextPageContext
 ): Promise<FindItemsResult> {
+  if (!context.query?.search) {
+    return {
+      props: {
+        items: null,
+        query: "",
+      },
+    };
+  }
+
   const response = await fetch(
-    `${process.env.API_HOST}/sites/MLA/search?q=${context.query.search}`
+    `${process.env.API_HOST}/sites/MLA/search?q=${context.query?.search || ""}`
   );
   const jsonResponse = await response.json();
 
@@ -17,6 +26,7 @@ export async function findItems(
         title: item.title,
         picture: item.thumbnail,
         price: item.price,
+        address: item.address.state_name,
       })),
       query: context.query.search,
     },

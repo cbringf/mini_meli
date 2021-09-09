@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Link from "next/link";
 import styles from "../../../styles/Header.module.css";
 
 const Header = ({ initialQuery, onQuerySubmit }: any) => {
@@ -6,11 +7,19 @@ const Header = ({ initialQuery, onQuerySubmit }: any) => {
 
   const handleSearch = () => onQuerySubmit(query);
 
+  useEffect(() => {
+    setQuery(initialQuery || "");
+  }, [initialQuery]);
+
   return (
     <div className={styles.container}>
       <div className={styles["search-box"]}>
         <div className={styles.logo}>
-          <img src="/Logo.png" />
+          <Link href="/items">
+            <a>
+              <img src="/Logo.png" />
+            </a>
+          </Link>
         </div>
         <input
           className={styles.input}
@@ -18,11 +27,7 @@ const Header = ({ initialQuery, onQuerySubmit }: any) => {
           placeholder="Nunca dejes de buscar"
           onChange={(e) => setQuery(e.currentTarget?.value || "")}
         />
-        <button
-          className={styles.submit}
-          onClick={handleSearch}
-          disabled={query.length <= 0}
-        >
+        <button className={styles.submit} onClick={handleSearch}>
           <img src="/search_icon.png" />
         </button>
       </div>

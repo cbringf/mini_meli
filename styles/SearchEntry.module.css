@@ -5,4 +5,20 @@
 
 .entry .info {
   width: 40%;
+  margin-top: 20px;
+}
+
+.item-price {
+  font-size: 24px;
+  font-weight: 340;
+  color: #333333;
+}
+
+.item-name {
+  color: #666666;
+  font-size: 18px;
+  font-family: Proxima Nova, -apple-system, Helvetica Neue, Helvetica, Roboto,
+    Arial, sans-serif;
+  margin-top: 32px;
+  font-weight: 300;
 }

@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useState } from "react";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Template.module.css";
 import { useRouter } from "next/router";
 import Header from "../pages/components/header";
 
@@ -8,10 +8,12 @@ export type TemplateProps = {
   children: JSX.Element;
   title?: string;
   description?: string;
+  query?: string;
 };
 
 export default function Template({
   children,
+  query,
   title,
   description,
 }: TemplateProps) {
@@ -20,7 +22,7 @@ export default function Template({
   const handleSearch = (query: string) => router.push(`/items?search=${query}`);
 
   return (
-    <div style={{ backgroundColor: "#EEEEEE" }}>
+    <div className={styles.content}>
       <Head>
         <title>{title || "MiniMeli.com.uy"}</title>
         <meta name="description" content={description || "Mini Meli"} />
@@ -28,7 +30,7 @@ export default function Template({
       </Head>
 
       <main>
-        <Header initialQuery="" onQuerySubmit={handleSearch} />
+        <Header initialQuery={query} onQuerySubmit={handleSearch} />
         <div
           style={{
             width: "80%",
@@ -36,7 +38,7 @@ export default function Template({
             backgroundColor: "#ffffff",
           }}
         >
-          {children}
+          <div style={{ marginTop: 40 }}>{children}</div>
         </div>
       </main>
     </div>

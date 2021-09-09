@@ -19,16 +19,17 @@ const SearchEntry = ({ id, title, picture, price, address }: any) => {
         </a>
       </Link>
       <div className={styles.info}>
-        <p>$ {price.toLocaleString()}</p>
+        <p className={styles["item-price"]}>$ {price.toLocaleString()}</p>
         <Link href={`${url}${id}`}>
           <a>
             <p
               style={{
                 color: "#666666",
-                height: 18,
+                fontSize: 18,
                 fontFamily:
                   "Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif",
                 marginTop: 32,
+                fontWeight: 300,
               }}
             >
               {title}
@@ -36,7 +37,16 @@ const SearchEntry = ({ id, title, picture, price, address }: any) => {
           </a>
         </Link>
       </div>
-      <p>{address}</p>
+      <div
+        style={{
+          width: "10%",
+          marginLeft: "auto",
+          fontSize: 12,
+          fontWeight: 300,
+        }}
+      >
+        <p>{address}</p>
+      </div>
     </div>
   );
 };
