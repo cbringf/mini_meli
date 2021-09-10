@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.6320" tests="11" failures="7">
+  <testsuite name="Root Suite" timestamp="2021-08-10T21:48:22" tests="0" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="products_api_medium" timestamp="2021-08-10T21:48:22" tests="11" file="/Users/celsobring/Documents/Study/0559ae5d-208e-4a6e-b18c-08c9450df3b0/test/index.spec.js" time="0.6320" failures="7">
+    <testcase name="products_api_medium should create a new product" time="0.1170" classname="should create a new product">
+    </testcase>
+    <testcase name="products_api_medium should create a new products without the published field" time="0.0090" classname="should create a new products without the published field">
+    </testcase>
+    <testcase name="products_api_medium should fetch all the products" time="0.0590" classname="should fetch all the products">
+    </testcase>
+    <testcase name="products_api_medium should fetch no products if there are not products stored" time="0.0060" classname="should fetch no products if there are not products stored">
+    </testcase>
+    <testcase name="products_api_medium should publish the product if all the constraints are met" time="0.0640" classname="should publish the product if all the constraints are met">
+      <failure message="expected { Object (_events, _eventsCount, ...) } to have status code 204 but got 404" type="AssertionError"><![CDATA[AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 204 but got 404
+    at Context.it (test/index.spec.js:91:30)
+    at process._tickCallback (internal/process/next_tick.js:68:7)]]></failure>
+    </testcase>
+    <testcase name="products_api_medium should publish the product and the data should be updated in the DB" time="0.0800" classname="should publish the product and the data should be updated in the DB">
+      <failure message="expected { Object (_events, _eventsCount, ...) } to have status code 204 but got 404" type="AssertionError"><![CDATA[AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 204 but got 404
+    at Context.it (test/index.spec.js:97:30)
+    at process._tickCallback (internal/process/next_tick.js:68:7)]]></failure>
+    </testcase>
+    <testcase name="products_api_medium should get 422 when MRP is less the price of the product" time="0.0430" classname="should get 422 when MRP is less the price of the product">
+      <failure message="expected { Object (_events, _eventsCount, ...) } to have status code 422 but got 404" type="AssertionError"><![CDATA[AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 422 but got 404
+    at Context.it (test/index.spec.js:107:30)
+    at process._tickCallback (internal/process/next_tick.js:68:7)]]></failure>
+    </testcase>
+    <testcase name="products_api_medium should get 422 when stock of the product is 0" time="0.1150" classname="should get 422 when stock of the product is 0">
+      <failure message="expected { Object (_events, _eventsCount, ...) } to have status code 422 but got 404" type="AssertionError"><![CDATA[AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 422 but got 404
+    at Context.it (test/index.spec.js:114:30)
+    at process._tickCallback (internal/process/next_tick.js:68:7)]]></failure>
+    </testcase>
+    <testcase name="products_api_medium should get 422 when both  MRP is less the price of the product and stock of the product is 0" time="0.0550" classname="should get 422 when both  MRP is less the price of the product and stock of the product is 0">
+      <failure message="expected { Object (_events, _eventsCount, ...) } to have status code 422 but got 404" type="AssertionError"><![CDATA[AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 422 but got 404
+    at Context.it (test/index.spec.js:121:30)
+    at process._tickCallback (internal/process/next_tick.js:68:7)]]></failure>
+    </testcase>
+    <testcase name="products_api_medium should get 405 for a put request to /products/:id" time="0.0170" classname="should get 405 for a put request to /products/:id">
+      <failure message="expected { Object (_events, _eventsCount, ...) } to have status code 405 but got 404" type="AssertionError"><![CDATA[AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 405 but got 404
+    at Context.it (test/index.spec.js:129:30)
+    at process._tickCallback (internal/process/next_tick.js:68:7)]]></failure>
+    </testcase>
+    <testcase name="products_api_medium should get 405 for a delete request to /products/:id" time="0.0670" classname="should get 405 for a delete request to /products/:id">
+      <failure message="expected { Object (_events, _eventsCount, ...) } to have status code 405 but got 404" type="AssertionError"><![CDATA[AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 405 but got 404
+    at Context.it (test/index.spec.js:135:30)
+    at process._tickCallback (internal/process/next_tick.js:68:7)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
