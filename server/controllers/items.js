@@ -7,14 +7,11 @@ module.exports = {
     const breaker = new CircuitBreaker(async () => {
       const query = req.query || {};
       const response = await fetch(
-        `${config.api.host}/sites/MLA/search?q=${query.search || ""}`
+        `${config.api.host}/sites/MLA/search?q=${query.q || ""}`
       );
       const jsonResponse = await response.json();
 
       res.json({
-        categories: jsonResponse.available_filters
-          .find((f) => f.id === "category")
-          .values.map((c) => c.name),
         items: jsonResponse.results.map((i) => ({
           id: i.id,
           title: i.title,
@@ -32,5 +29,34 @@ module.exports = {
     breaker.fire();
   },
 
-  async getItem(req, res) {},
+  async getItem(req, res) {
+    const breaker = new CircuitBreaker(async () => {
+      const apiUrl = `${config.api.host}/items/${req.params.id}`;
+
+      const responses = await Promise.all([
+        fetch(apiUrl),
+        fetch(`${apiUrl}/description`),
+      ]);
+      const itemResult = await responses[0].json();
+      const itemDescResult = await responses[1].json();
+
+      res.send({
+        item: {
+          title: itemResult.title,
+          id: itemResult.id,
+          price: {
+            amount: itemResult.price,
+            currency: itemResult.currency_id,
+          },
+          picture: (itemResult.pictures || [{}])[0].url,
+          condition: itemResult.condition,
+          free_shipping: itemResult.shipping.free_shipping,
+          sold_quantity: itemResult.sold_quantity,
+          description: itemDescResult.plain_text,
+        },
+      });
+    }, {});
+
+    breaker.fire();
+  },
 };
