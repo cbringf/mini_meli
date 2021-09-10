@@ -1,0 +1,9 @@
+{
+  "reporterEnabled": "spec, mocha-junit-reporter",
+  "mochaJunitReporterReporterOptions": {
+    "mochaFile": "unit.xml"
+  },
+  "api": {
+    "host": "https://api.mercadolibre.com"
+  }
+}

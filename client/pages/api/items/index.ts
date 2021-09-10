@@ -1,3 +1,5 @@
+// Use this functions to load directly from MELI
+
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextPageContext } from "next";
 import { FindItemsResult, GetDetailsResult } from "./types";
@@ -25,7 +27,7 @@ export async function findItems(
         id: item.id,
         title: item.title,
         picture: item.thumbnail,
-        price: item.price,
+        price: item.price.amount,
         address: item.address.state_name,
       })),
       query: context.query.search,

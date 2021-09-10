@@ -3,7 +3,10 @@ import { DetailsPageProps } from "../../items/[id]";
 // Models definitions
 export type ItemEntry = {
   picture: string;
-  price: number;
+  price: {
+    amount: number;
+    currency: string;
+  };
   title: string;
   id: string;
   address: string;
