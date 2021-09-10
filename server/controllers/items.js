@@ -12,7 +12,7 @@ module.exports = {
       const jsonResponse = await response.json();
 
       res.json({
-        items: jsonResponse.results.map((i) => ({
+        items: jsonResponse.results.slice(0, 4).map((i) => ({
           id: i.id,
           title: i.title,
           price: {
@@ -22,6 +22,7 @@ module.exports = {
           picture: i.thumbnail,
           condition: i.condition,
           free_shipping: i.shipping.free_shipping,
+          address: i.address.state_name,
         })),
       });
     }, {});

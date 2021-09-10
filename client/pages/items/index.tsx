@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import { Fragment } from "react";
 import Template from "../../template";
-import { findItems } from "../api/items";
+import { findItems } from "../api/items/local";
 import { ItemEntry } from "../api/items/types";
 import EmptyEntryList from "../components/empty-entry-list";
 import SearchEntry from "../components/search-entry";
@@ -34,7 +34,7 @@ const SearchPage: NextPage<SearchPageProps> = ({ items, query }) => {
               id={i.id}
               title={i.title}
               picture={i.picture}
-              price={i.price}
+              price={i.price.amount}
               address={i.address}
             />
           ))}

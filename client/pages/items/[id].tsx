@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import { Fragment } from "react";
 import Template from "../../template";
-import { getDetails } from "../api/items";
+import { getDetails } from "../api/items/local";
 import { ItemDetails } from "../api/items/types";
 import Slider from "../components/slider";
 
