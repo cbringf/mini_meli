@@ -29,6 +29,7 @@ const DetailsPage: NextPage<DetailsPageProps> = ({ details }) => {
             </p>
             <p className={styles.title}>{details.title}</p>
             <p className={styles.price}>$ {details.price}</p>
+            <button className={styles.buy}>Comprar</button>
           </div>
         </div>
         <div className={styles.flex}>

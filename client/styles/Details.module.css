@@ -15,6 +15,7 @@
 .description {
   font-weight: 300;
   font-size: 18px;
+  margin-top: 32px;
 }
 
 .description-container {
@@ -39,4 +40,11 @@
   font-weight: 300;
   margin-top: 32px;
   margin-bottom: 32px;
+}
+
+.buy {
+  background: #3483fa;
+  border: none;
+  color: #fff;
+  padding: 7px 40px 5px 40px;
 }
