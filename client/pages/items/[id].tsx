@@ -28,7 +28,7 @@ const DetailsPage: NextPage<DetailsPageProps> = ({ details }) => {
               {details.condition} - {details.soldQuantity} vendidos
             </p>
             <p className={styles.title}>{details.title}</p>
-            <p className={styles.price}>$ {details.price}</p>
+            <p className={styles.price}>$ {details.price.toLocaleString()}</p>
             <button className={styles.buy}>Comprar</button>
           </div>
         </div>
