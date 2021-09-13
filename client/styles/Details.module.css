@@ -1,0 +1,42 @@
+.flex {
+  display: flex;
+}
+
+.slide {
+  width: 80%;
+  text-align: center;
+}
+
+.t-28 {
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.description {
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.description-container {
+  width: 80%;
+  margin: 32px;
+}
+
+.condition {
+  font-size: 14px;
+  font-weight: 200;
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.price {
+  font-size: 46px;
+  font-weight: 300;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}

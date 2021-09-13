@@ -17,6 +17,8 @@ export type ItemDetails = {
   title: string;
   price: number;
   description: string;
+  condition?: string;
+  soldQuantity?: string;
 };
 
 // Page properties definitions

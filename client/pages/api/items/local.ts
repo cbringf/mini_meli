@@ -35,17 +35,17 @@ export async function getDetails(
   const apiUrl = `${process.env.LOCAL_API_HOST}/api/items/${context.query.id}`;
 
   const response = await fetch(apiUrl);
-  const itemResult = await response.json();
-
-  console.log(itemResult);
+  const itemResult = (await response.json()).item;
 
   return {
     props: {
       details: {
-        title: itemResult.item.title,
-        price: itemResult.item.price.amount,
-        description: itemResult.item.description,
-        pictures: [itemResult.item.picture],
+        title: itemResult.title,
+        price: itemResult.price.amount,
+        description: itemResult.description,
+        pictures: [itemResult.picture],
+        condition: itemResult.condition,
+        soldQuantity: itemResult.sold_quantity,
       },
     },
   };

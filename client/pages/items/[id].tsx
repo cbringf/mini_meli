@@ -4,6 +4,7 @@ import Template from "../../template";
 import { getDetails } from "../api/items/local";
 import { ItemDetails } from "../api/items/types";
 import Slider from "../components/slider";
+import styles from "../../styles/Details.module.css";
 
 export type DetailsPageProps = {
   details: ItemDetails;
@@ -18,18 +19,24 @@ const DetailsPage: NextPage<DetailsPageProps> = ({ details }) => {
       description={details.description}
     >
       <Fragment>
-        <div>
-          <div>
+        <div className={styles.flex}>
+          <div className={styles.slide}>
             <Slider pictures={details.pictures} />
           </div>
           <div>
-            <p>{details.title}</p>
-            <p>{details.price}</p>
+            <p className={styles.condition}>
+              {details.condition} - {details.soldQuantity} vendidos
+            </p>
+            <p className={styles.title}>{details.title}</p>
+            <p className={styles.price}>$ {details.price}</p>
           </div>
         </div>
-        <div>
-          <p>Descripción del producto</p>
-          <p>{details.description}</p>
+        <div className={styles.flex}>
+          <div className={styles["description-container"]}>
+            <p className={styles["t-28"]}>Descripción del producto</p>
+            <p className={styles.description}>{details.description}</p>
+          </div>
+          <div></div>
         </div>
       </Fragment>
     </Template>
